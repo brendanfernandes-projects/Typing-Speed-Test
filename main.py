@@ -27,6 +27,7 @@ def callback(sv):
     current_letter = len(sv.get()) - 1
     while not time() <= START + 30:
         tkinter.messagebox.showinfo("Results", f"The results are in, you type at {(CORRECT_WORDS / 5) / 0.5} WPM.")
+        tk.quit()
         break
     if sv.get() == NEW_WORD:
         CORRECT_WORDS += len(NEW_WORD)
