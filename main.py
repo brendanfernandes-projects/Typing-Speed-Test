@@ -25,7 +25,6 @@ def change_word():
 def callback(sv):
     global NEW_WORD, CORRECT_WORDS
     current_letter = len(sv.get()) - 1
-    print(sv.get())
     while not time() <= START + 30:
         tkinter.messagebox.showinfo("Results", f"The results are in, you type at {(CORRECT_WORDS / 5) / 0.5} WPM.")
         break
@@ -37,7 +36,6 @@ def callback(sv):
             if sv.get()[current_letter] != NEW_WORD[current_letter]:
                 word.config(text=f"{NEW_WORD}", bg="Red")
             else:
-                print(sv.get()[current_letter], NEW_WORD[current_letter])
                 word.config(text=f"{NEW_WORD}", bg=BACKGROUND)
         except IndexError:
             word.config(text=f"{NEW_WORD}", bg="Red")
